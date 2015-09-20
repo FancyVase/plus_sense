@@ -11,8 +11,10 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import java.io.IOException;
+import java.util.Map;
 
 import io.indico.Indico;
+import io.indico.enums.FacialEmotion;
 import io.indico.network.IndicoCallback;
 import io.indico.results.IndicoResult;
 import io.indico.utils.IndicoException;
@@ -33,22 +35,15 @@ public class MainActivity extends AppCompatActivity {
         View.OnClickListener listener = new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String input = String.valueOf(sentimentEditText.getText());
+                String filepath = "../../../../res/drawable/happy_selfie.png";
+                IndicoResult image = Indico.fer.predict(filepath);
 
                 try {
-                    Indico.sentiment.predict(input, new IndicoCallback<IndicoResult>() {
-                        @Override
-                        public void handle(IndicoResult result) throws IndicoException {
-                            long sentimentResult = Math.round(result.getSentiment()*100);
-
-                            resultTextView.setText(String.valueOf(sentimentResult) + "%");
-                            Log.i("Indico Sentiment", "sentiment of: " + result.getSentiment());
-                        }
-                    });
-                } catch (IOException | IndicoException e) {
+                    Map<FacialEmotion, Double> result = image.getFer();
+                    Log.i("Facial Emotion Recognition:", result.toString());
+            } catch (IndicoException e) {
                     e.printStackTrace();
                 }
-            }
         };
         checkButton.setOnClickListener(listener);
     }

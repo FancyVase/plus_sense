@@ -7,37 +7,23 @@
     android:gravity="center_horizontal"
     android:background="@drawable/bg">
 
-
-
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="How positive is...?"
+        android:text="What emotions do you express?"
         android:id="@+id/titleTextView"
         android:textSize="30dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:textColor="#80f8fcff" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:ellipsize="start"
-        android:gravity="center"
-        android:id="@+id/sentimentEditText"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true"
-        android:hint="Try your dog&apos;s name, favorite food, or something else that&apos;s interesting!"
+        android:textColor="#80f8fcff"
         android:textAlignment="gravity"
-        android:textColor="#ffffff"
-        android:textColorHint="#cdcdcd" />
+        android:gravity="center"/>
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="CHECK"
+        android:text="CHECK IMAGE"
         android:id="@+id/checkButton"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
@@ -49,7 +35,8 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:id="@+id/resultTextView"
         android:textSize="60dp"
-        android:layout_above="@+id/sentimentEditText"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:layout_centerInParent="true"
+        android:layout_centerVertical="true" />
 
 </RelativeLayout>
