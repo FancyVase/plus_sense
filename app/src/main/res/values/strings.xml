@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">HackMIT15</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="indico_api_key">7ad6dab4544a83ad51aee794375b68b0</string>
+</resources>
